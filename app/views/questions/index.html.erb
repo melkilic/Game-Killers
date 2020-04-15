@@ -1,0 +1,10 @@
+<%=@questions.each do |q|%>
+<%=q.content%>
+<%=q.image%>
+<select name="trivia_id">
+<%@questions.each do |q|%>
+<option value="<%=q.id%>">
+<%=q.content%>
+</option>
+<%end%>
+</select>

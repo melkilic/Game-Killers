@@ -3,6 +3,7 @@ class CreateAnswer < ActiveRecord::Migration[6.0]
     create_table :answers do |t|
       t.string :content
       t.boolean :solution
+      t.integer :question_id
     end
   end
 end

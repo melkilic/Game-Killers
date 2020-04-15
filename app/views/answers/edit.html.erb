@@ -1,0 +1,7 @@
+<%=form_for(@answer) do |f|%>
+<label> Content: </label><br>
+<%=f.text_field :content%><br>
+<label>Solution:</label><br>
+<%=f.text_area :solution%><br>
+<%=f.submit%><br>
+<%end%>

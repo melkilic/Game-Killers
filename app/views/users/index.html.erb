@@ -1,0 +1,6 @@
+<h1>Users:</h1>
+<ul>
+<%@users.each do |t|%>
+<li><%=link_to(t.user_name,t)%></li>
+<%end%>
+</ul>

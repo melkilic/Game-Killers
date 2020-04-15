@@ -1,0 +1,10 @@
+<a class="button" href="/trivia">Trivia</a>
+<a class="button" href="/users">Users</a>
+<a class="button" href="/trivia/new">Create your trivia</a>
+<h1>Select a Trivia:</h1>
+<ul>
+<%@trivia.each do |t|%>
+<li><%=link_to(t.title,t)%></li>
+<%end%>
+</ul>
+

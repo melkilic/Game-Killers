@@ -1,0 +1,9 @@
+
+<label> Answer 2: </label>
+<%=form_with(model:@answer) do |f|%>
+<label> Content: </label>
+<%=f.text_field :content%><br>
+<label> Correct answer </label>
+<%=f.collection_check_boxes(:answer_id, @answers, :id, :solution)%>
+<%=f.submit%>
+<%end%>
