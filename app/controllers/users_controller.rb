@@ -1,23 +1,23 @@
 class UsersController < ApplicationController
 
-    skip_before_action(:check_login, only: [:view_login, :handle_login])
+    skip_before_action(:check_login, only: [:view_login, :handle_login,:new,:create])
 
 def view_login
     render(:login)
 end
 
-# def handle_login
-#     user = User.find_by({ username: params[:username] })
-#     if(user.authenticate(params[:password_digest]))
-#         session[:user_id] = user.id
-#         redirect_to('/trivia')
-#     else
-#         p "Login Failed"
-#     end
-# end
-    
+def handle_login
+    user = User.find_by({ user_name: params[:user_name]})
+    if (user!=nil && user.authenticate(params[:password]))
+        session[:user_id] = user.id
+        redirect_to('/trivia')
+    else
+        p "Login Failed"
+    end
+end
+
    def index
-        @users= User.all
+    @users= User.all
    end
 
     def show
@@ -30,6 +30,8 @@ end
 
     def create
         @user=User.new(user_params)
+        @user.save
+        redirect_to('/trivia')
     end
 
     def edit
@@ -44,6 +46,6 @@ end
    
     private
     def user_params
-        params.require(:user).permit(:name,:email_address,:password_digest,:username)
+        params.require(:user).permit(:name,:email_address,:password,:user_name)
     end
 end

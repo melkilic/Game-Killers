@@ -1,7 +1,13 @@
 <label>Content:</label>
-<%=@question.content%>
+<%=@question.content%><br>
 <label>Image:</label>
-<%=@question.image%>
-<select name="trivia_id">
-<%@question.%>
-</select>
+<%@question.image%>
+<br>
+<br>
+<a class="button" href="/answers/new">Add answer</a><br>
+
+<label>Answers</label><br>
+<%@question.answers.each do |answer|%>
+<%=answer.content%>
+<%=answer.solution%> <br>
+<%end%>

@@ -8,7 +8,7 @@ Game.destroy_all
 
 tr1 = Trivium.create({ title:"Facts of Harry Potter"})
 
-us1 = User.create({name:"Harry",email_address: "magic@gmail.com",user_name:"Harryp1", password_digest:"magic"})
+us1 = User.create({name:"Harry",email_address: "magic@gmail.com",user_name:"Harryp1", password:"magic"})
 
 ga1 = Game.create({user_id:us1.id, trivium_id:tr1.id})
 
