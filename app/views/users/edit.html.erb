@@ -1,0 +1,12 @@
+<label>User: </label><br>
+<%=form_with(model:@user) do |f|%>
+<label> Name: </label><br>
+<%=f.text_field :name%><br>
+<label> Email_address: </label><br>
+<%=f.text_field :email_address%><br>
+<label>User_name: </label><br>
+<%=f.text_field :user_name%><br>
+<label> password: </label><br>
+<%=f.password_field :password%><br>
+<%=f.submit%><br>
+<%end%>

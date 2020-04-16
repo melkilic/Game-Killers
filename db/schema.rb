@@ -15,16 +15,18 @@ ActiveRecord::Schema.define(version: 2020_04_13_161508) do
   create_table "answers", force: :cascade do |t|
     t.string "content"
     t.boolean "solution"
+    t.integer "question_id"
   end
 
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "trivia_id"
+    t.integer "trivium_id"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "content"
-    t.string "image", null: false
+    t.string "image"
+    t.integer "trivium_id"
   end
 
   create_table "trivia", force: :cascade do |t|
@@ -36,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_161508) do
     t.string "name"
     t.string "email_address"
     t.string "user_name"
-    t.string "password"
+    t.string "password_digest"
   end
 
 end

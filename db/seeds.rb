@@ -1,27 +1,27 @@
 require "faker"
 
-Trivia.destroy_all
+Trivium.destroy_all
 Question.destroy_all
 Answer.destroy_all
 User.destroy_all
 Game.destroy_all
 
-tr1 = Trivia.create({ title:"Facts of Harry Potter",content:})
+tr1 = Trivium.create({ title:"Facts of Harry Potter"})
 
 us1 = User.create({name:"Harry",email_address: "magic@gmail.com",user_name:"Harryp1", password:"magic"})
 
-ga1 = Game.create({user_id:us1.id, trivia_id:tr1.id})
+ga1 = Game.create({user_id:us1.id, trivium_id:tr1.id})
 
- tq1 = Question.create({content:"What house at Hogwarts does Harry belong to?", image:"https://nexter.org/wp-content/uploads/2018/09/harry-potter-sorting-hat-hogwarts-quiz.jpg"})
- tq2 =Question.create({content:"What position does Harry play on his Quidditch team?", image:"https://cdn.unifiedcommerce.com/content/product/large/819844012267.jpg"})
- tq3 =Question.create({content:"What power do the dementors have over people?"})
- tq4 =Question.create({content:"Is one of the three illegal curses and allows the wizard to control the actions of another person.", image:"https://s3.amazonaws.com/charitycdn/cache/resizedcrop-fd3045706b4e0682a31ccfb68fb5e58d-800x800.jpg"})
- tq5 =Question.create({content:"Is a person that is trained to catch Dark wizards.", image:"https://lh3.googleusercontent.com/proxy/O2wFYO2gKyoAmMmdOmaRI51NAx5qZCYMO_M3WRu2ci2iTkNhptTarMFR90xS4h1_pz9P2A7E2zGyZMXYKoqp2X7rR8t4K6LYzqEnCnEBfTjsM68Sl5MlenhORHhHzePTSt0VT2_TWdJc_mU1XJEQfV2Y"})
- tq6  =Question.create({content:" Who is Nagini?"})
- tq7 =Question.create({content:"How does Harry catch his first snitch?"})
-tq8 =Question.create({content:"What magical talent does Harry share with Voldemort?", image:"https://s.driving-tests.org/wp-content/uploads/autotest/1293175946_IndianaQ4.svg"})
-tq9 =Question.create({content:" Who kills Professor Dumbledore?", image:"https://img.women.com/images/images/000/174/635/large/triwizard_cup_jpeg.jpg?1551654502"})
-tq10 = Question.create({content:"Which character became a professional Quidditch player?"})
+ tq1 = Question.create({content:"What house at Hogwarts does Harry belong to?", image:"https://nexter.org/wp-content/uploads/2018/09/harry-potter-sorting-hat-hogwarts-quiz.jpg",trivium_id:tr1.id})
+ tq2 = Question.create({content:"What position does Harry play on his Quidditch team?", image:"https://cdn.unifiedcommerce.com/content/product/large/819844012267.jpg",trivium_id:tr1.id})
+ tq3 = Question.create({content:"What power do the dementors have over people?",trivium_id:tr1.id})
+ tq4 = Question.create({content:"Is one of the three illegal curses and allows the wizard to control the actions of another person.", image:"https://s3.amazonaws.com/charitycdn/cache/resizedcrop-fd3045706b4e0682a31ccfb68fb5e58d-800x800.jpg",trivium_id:tr1.id})
+ tq5 = Question.create({content:"Is a person that is trained to catch Dark wizards.", image:"https://lh3.googleusercontent.com/proxy/O2wFYO2gKyoAmMmdOmaRI51NAx5qZCYMO_M3WRu2ci2iTkNhptTarMFR90xS4h1_pz9P2A7E2zGyZMXYKoqp2X7rR8t4K6LYzqEnCnEBfTjsM68Sl5MlenhORHhHzePTSt0VT2_TWdJc_mU1XJEQfV2Y",trivium_id:tr1.id})
+ tq6  = Question.create({content:" Who is Nagini?",trivium_id:tr1.id})
+ tq7 = Question.create({content:"How does Harry catch his first snitch?",trivium_id:tr1.id})
+tq8 = Question.create({content:"What magical talent does Harry share with Voldemort?", image:"https://s.driving-tests.org/wp-content/uploads/autotest/1293175946_IndianaQ4.svg",trivium_id:tr1.id})
+tq9 = Question.create({content:" Who kills Professor Dumbledore?", image:"https://img.women.com/images/images/000/174/635/large/triwizard_cup_jpeg.jpg?1551654502",trivium_id:tr1.id})
+tq10 = Question.create({content:"Which character became a professional Quidditch player?",trivium_id:tr1.id})
 
 ta1 = Answer.create({content:"Slytherin",solution:false, question_id:tq1.id})
 ta2 = Answer.create({content:"Hufflepuff",solution:false, question_id:tq1.id})
