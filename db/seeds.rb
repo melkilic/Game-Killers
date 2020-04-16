@@ -10,7 +10,7 @@ tr1 = Trivium.create({ title:"Facts of Harry Potter"})
 
 us1 = User.create({name:"Harry",email_address: "magic@gmail.com",user_name:"Harryp1", password:"magic"})
 
-ga1 = Game.create({user_id:us1.id, trivium_id:tr1.id})
+ga1 = Game.create({user_id:us1.id, trivium_id:tr1.id, result: 50})
 
  tq1 = Question.create({content:"What house at Hogwarts does Harry belong to?", image:"https://nexter.org/wp-content/uploads/2018/09/harry-potter-sorting-hat-hogwarts-quiz.jpg",trivium_id:tr1.id})
  tq2 = Question.create({content:"What position does Harry play on his Quidditch team?", image:"https://cdn.unifiedcommerce.com/content/product/large/819844012267.jpg",trivium_id:tr1.id})

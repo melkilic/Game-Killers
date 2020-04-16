@@ -16,14 +16,6 @@ def handle_login
     end
 end
 
-   def index
-    @users= User.all
-   end
-
-    def show
-        @user= User.find(params[:id])
-    end
-    
     def new
         @user=User.new
     end
@@ -33,6 +25,16 @@ end
         @user.save
         redirect_to('/trivia')
     end
+
+   def index
+    @users= User.all
+   end
+
+    def show
+        @user= User.find(params[:id])
+    end
+    
+    
 
     def edit
         @user =User.find(params[:id])

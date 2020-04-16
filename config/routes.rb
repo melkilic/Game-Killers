@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post('/users/login', { to: 'users#handle_login' })
   # get('/users/login', {to: "application#homepage"} )
   # get('/users/new', {to: "application#homepage"} )
+  get("games/pick", to:'games#pick_game')
+  get("games/pick/:id", to:'games#pick_game')
   resources :users
   resources :trivia
   resources :questions
