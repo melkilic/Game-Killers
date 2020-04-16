@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_161508) do
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "trivium_id"
+    t.integer "result"
   end
 
   create_table "questions", force: :cascade do |t|
