@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   post('/users/login', { to: 'users#handle_login' })
   get('/users/login', {to: "users#view_login"} )
   # get('/users/new', {to: "application#homepage"} )
+  get("/games/new",{to:'games#new'})
   get("/games/pick",{to:'games#pick_game'})
   get("/games/pick/:id",{to:'games#start_game'})
   post('/games/result/:id',{to:'games#create'})
   get("/games/questions",{to:'games#questions'})
-  get("/games/new",{to:'games#new'})
+
   resources :users
   resources :trivia
   resources :questions

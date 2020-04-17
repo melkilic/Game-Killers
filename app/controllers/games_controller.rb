@@ -15,7 +15,7 @@ class GamesController < ApplicationController
         total = params[:solution]
         @result = flash[:result]
     end
-
+    
 
     def create
          result =0

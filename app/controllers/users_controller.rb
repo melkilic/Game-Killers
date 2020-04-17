@@ -17,13 +17,21 @@ def handle_login
 end
     
     def new
+        @error_messages = flash[:error_messages]
         @user=User.new
     end
 
     def create
-        @user=User.new(user_params)
-        @user.save
-        redirect_to('/trivia')
+        @user=User.create(user_params)
+        
+
+        if(@user.valid?)
+            redirect_to("/trivia")
+        else
+            flash[:error_messages] = @user.errors.full_messages
+            redirect_to("/users/new")
+        end
+
     end
 
     def index

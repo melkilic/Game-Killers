@@ -24332,3 +24332,1233 @@ Processing by GamesController#start_game as HTML
 Completed 200 OK in 62ms (Views: 53.0ms | ActiveRecord: 2.2ms | Allocations: 15372)
 
 
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/games/pick/1" for ::1 at 2020-04-16 17:10:38 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GamesController#start_game as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrivium Load (1.6ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."trivium_id" = ?[0m  [["trivium_id", 1]]
+  ↳ app/controllers/games_controller.rb:14:in `start_game'
+  Rendering games/start_game.html.erb within layouts/application
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 8]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 6]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 9]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  ↳ app/views/games/start_game.html.erb:7
+  Rendered games/start_game.html.erb within layouts/application (Duration: 78.2ms | Allocations: 16126)
+Completed 200 OK in 134ms (Views: 81.8ms | ActiveRecord: 3.9ms | Allocations: 29579)
+
+
+Started GET "/games/pick" for ::1 at 2020-04-16 17:10:42 -0500
+Processing by GamesController#pick_game as HTML
+  Rendering games/pick_game.html.erb within layouts/application
+  [1m[36mTrivium Load (0.4ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/games/pick_game.html.erb:2
+  Rendered games/pick_game.html.erb within layouts/application (Duration: 3.2ms | Allocations: 590)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 2256)
+
+
+Started GET "/users" for ::1 at 2020-04-16 17:10:46 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 3867)
+Completed 200 OK in 30ms (Views: 19.0ms | ActiveRecord: 2.0ms | Allocations: 7523)
+
+
+Started GET "/new" for ::1 at 2020-04-16 17:10:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-16 17:11:00 -0500
+Processing by ApplicationController#homepage as HTML
+  Rendering application/homepage.html.erb within layouts/application
+  Rendered application/homepage.html.erb within layouts/application (Duration: 1.9ms | Allocations: 88)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 2014)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:11:03 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 901)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 2543)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:11:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"PosFPkf1cIHPPXugN47z6blBCtLd7mCXwJIyXmlzVNd4MzNvVaDXbMMU33+Yc1nXyubDQWwEOODaqdJr0+uAVQ==", "user"=>{"name"=>"Venma", "email_address"=>"Chinagirl@gmail.com", "user_name"=>"Vemahao", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Venma"], ["email_address", "Chinagirl@gmail.com"], ["user_name", "Vemahao"], ["password_digest", "$2a$12$kMhxDI1zSdZpgcIMW1XJc.fhSYnuMOENiSs8rUlPyvqZWdoAETu.O"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 325ms (ActiveRecord: 3.5ms | Allocations: 2628)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:11:48 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.2ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 810)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 3049)
+
+
+Started GET "/users" for ::1 at 2020-04-16 17:11:54 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 656)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.9ms | Allocations: 2324)
+
+
+Started GET "/" for ::1 at 2020-04-16 17:12:09 -0500
+Processing by ApplicationController#homepage as HTML
+  Rendering application/homepage.html.erb within layouts/application
+  Rendered application/homepage.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 1651)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:12:14 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 673)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 2174)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:12:29 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"aTzG8Xv0Inxs0r5N+QqluXXEb+9zJN4D1ZmeiTH8gLgvhPCgaaGFkWD7GpJW9w+HBmOmfMLOhnTPon68i2RUOg==", "user"=>{"name"=>"", "email_address"=>"Chinagirl@gmail.com", "user_name"=>"Vemahao", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 296ms (ActiveRecord: 0.0ms | Allocations: 775)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:12:29 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.1ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 604)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 2269)
+
+
+Started GET "/trivia/1" for ::1 at 2020-04-16 17:12:32 -0500
+Processing by TriviaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trivia_controller.rb:13:in `show'
+  Rendering trivia/show.html.erb within layouts/application
+  Rendered trivia/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 147)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2449)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:12:38 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.2ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 610)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2276)
+
+
+Started GET "/users" for ::1 at 2020-04-16 17:12:40 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 656)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 2329)
+
+
+Started GET "/" for ::1 at 2020-04-16 17:12:55 -0500
+Processing by ApplicationController#homepage as HTML
+  Rendering application/homepage.html.erb within layouts/application
+  Rendered application/homepage.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 1647)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:12:57 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 672)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 2176)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:13:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Wq3Qx2BPXb95hOwY0TAWDBK5OrKjjMUnIhsiWIolHLAcFeaWchr6UnWtSMd+zbwyYR7zIRJmnVA4IMJtML3IMg==", "user"=>{"name"=>"Russio", "email_address"=>"rusioo@gmail.com", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 322ms (ActiveRecord: 0.0ms | Allocations: 773)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:13:27 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 604)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms | Allocations: 2271)
+
+
+Started GET "/users" for ::1 at 2020-04-16 17:13:31 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 650)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 2330)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:38:07 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 958)
+Completed 200 OK in 52ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 7854)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:38:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"DeUiILrN/S8pcL3f6WC8zFBKukpjnKFEFBm48W/RfrtLXRRxqJhawiVZGQBGnRbyI+1z2dJ2+TMOIljE1UmqOQ==", "user"=>{"name"=>"Steven", "email_address"=>"steven@gmail.com", "user_name"=>"steven11", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Steven"], ["email_address", "steven@gmail.com"], ["user_name", "steven11"], ["password_digest", "$2a$12$RKl1K2MvjmEfRPVJjHPpzuaBDqE3HSWaPuxpkN4TLmKWhgaOXW3Xu"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 50707ms (ActiveRecord: 5.7ms | Allocations: 8154)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:39:26 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (1.0ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 2398)
+Completed 200 OK in 56ms (Views: 39.5ms | ActiveRecord: 1.0ms | Allocations: 9170)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:39:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (2.8ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 75.5ms | Allocations: 2691)
+Completed 200 OK in 100ms (Views: 80.0ms | ActiveRecord: 3.9ms | Allocations: 6336)
+
+
+Started GET "/users" for ::1 at 2020-04-16 17:39:53 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 3918)
+Completed 200 OK in 42ms (Views: 25.3ms | ActiveRecord: 2.1ms | Allocations: 7364)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:39:59 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 676)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 2178)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:40:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ACecnKOx355r3sqlU+ZCVJq650knRg036o6bdVh1J8dGn6rNseR4c2f3bnr8G+hq6R0u2pasVUDwtXtA4u3zRQ==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 36915ms (ActiveRecord: 0.0ms | Allocations: 9314)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:30:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 17:41:06 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 676)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 2178)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:42:14 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 738)
+Completed 200 OK in 38ms (Views: 9.4ms | ActiveRecord: 1.2ms | Allocations: 7211)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:42:16 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"L3XdSMrUrKKw5Lrughnk7Vx0K6UjEv/X8r9jmGsiOvRpzesZ2IELT7zNHjEt5E7TL9PiNpL4p6DohIOt0brudg==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 55893ms (ActiveRecord: 0.0ms | Allocations: 9531)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:32:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/users" for ::1 at 2020-04-16 17:43:21 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"L3XdSMrUrKKw5Lrughnk7Vx0K6UjEv/X8r9jmGsiOvRpzesZ2IELT7zNHjEt5E7TL9PiNpL4p6DohIOt0brudg==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 14817ms (ActiveRecord: 0.0ms | Allocations: 7049)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:32:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 17:43:39 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 746)
+Completed 200 OK in 48ms (Views: 11.5ms | ActiveRecord: 5.6ms | Allocations: 7220)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:43:43 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ZVmiI49mebCtlDoHBFGe8fx0D6DVsfIsFIISfzrezwYj4ZRynTPeXaG9ntirrDTPj9PGM2RbqlsOufJKgEYbhA==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1593)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:32:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 17:44:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 733)
+Completed 200 OK in 34ms (Views: 9.4ms | ActiveRecord: 1.3ms | Allocations: 7227)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:44:10 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"r06V4UQBSUm0tfmqMCCG7KJNh85k+je/Xek8H3T2+wnp9qOwVlTupLicXXWf3SzS0epOXdUQb8hH0twqzm4viw==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 199290ms (ActiveRecord: 0.0ms | Allocations: 67748)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:33:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 17:47:34 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 734)
+Completed 200 OK in 42ms (Views: 17.5ms | ActiveRecord: 3.9ms | Allocations: 7210)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:47:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"L1TVV3ZVKpn/8XaEnpznUPy+RMDz0t98P+2vX6Xs3ipp7OMGZACNdPPY0lsxYU1ujxmNU0I4hwsl1k9qH3QKqA==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1593)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:32:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 17:48:17 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 742)
+Completed 200 OK in 43ms (Views: 9.5ms | ActiveRecord: 2.1ms | Allocations: 7217)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:48:18 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"a2sLwPih0fMETfyMrJ+LGqfI7QMtkfq8yS8QqSIKHBst0z2R6vR2HghkWFMDYiEk1G8kkJx7osvTFPCcmJLImQ==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 1164)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:48:18 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2494)
+Completed 200 OK in 31ms (Views: 17.7ms | ActiveRecord: 1.6ms | Allocations: 5995)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 17:49:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 739)
+Completed 200 OK in 34ms (Views: 9.6ms | ActiveRecord: 1.2ms | Allocations: 7214)
+
+
+Started POST "/users" for ::1 at 2020-04-16 17:49:44 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1jyWt+uPj9fO4frPKLjlMnBvMi1E6hwzJmkNi1eK19mQhKDm+dooOsLIXhCHRU8MA8j7vvUAREQ8Uu2+7RIDWw==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 1131)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 17:49:44 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2494)
+Completed 200 OK in 21ms (Views: 13.1ms | ActiveRecord: 1.2ms | Allocations: 5996)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:45:37 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 18.6ms | Allocations: 864)
+Completed 200 OK in 139ms (Views: 85.2ms | ActiveRecord: 0.0ms | Allocations: 7843)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:45:41 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"IYLQvvYWaui8kuRaa5Vks+QuLrvV5+LuxV8/cHRCGy5nOubv5EPNBbC7QIXEaM6Nl4nnKGQNupnfZN9FztrPrA==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/trivia
+Redirected to 
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2161)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users_controller.rb:32:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 20:46:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 569)
+Completed 200 OK in 30ms (Views: 8.3ms | ActiveRecord: 2.9ms | Allocations: 7135)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:46:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"UJ70RsGoU7+07AFjgl0ZgdZDWw36k3abkBNY0OCx8LkWJsIX0/30UrjFpbwtoLO/peSSnkt5LuyKKLjlWikkOw==", "user"=>{"name"=>"", "email_address"=>"", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/trivia
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2138)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users_controller.rb:32:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 20:46:56 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 503)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 2182)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:47:24 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"JoexIKiVAk+RNfKS3u14vo39gU86qALBmPqVls/rEapgP4dxusClop0cVk1xENKA/lpI3ItCWraCwXWjdXPFKA==", "user"=>{"name"=>"Mel", "email_address"=>"mel@gmail.com", "user_name"=>"newmelo123", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name") VALUES (?, ?, ?)[0m  [["name", "Mel"], ["email_address", "mel@gmail.com"], ["user_name", "newmelo123"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia
+Completed 500 Internal Server Error in 394ms (ActiveRecord: 4.2ms | Allocations: 3468)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users_controller.rb:32:in `create'
+Started GET "/users/new" for ::1 at 2020-04-16 20:49:23 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 569)
+Completed 200 OK in 24ms (Views: 7.5ms | ActiveRecord: 2.1ms | Allocations: 7120)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:49:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"X2Z/m8GmQm9uEnaGYI12UgDgZ2Ub+VmcZmrvIwrNiDIZ3knK0/PlgmI70lnPcNxsc0eu9qoTAet8UQ8WsFVcsA==", "user"=>{"name"=>"Mel", "email_address"=>"mel@gmail.com", "user_name"=>"newmel", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name") VALUES (?, ?, ?)[0m  [["name", "Mel"], ["email_address", "mel@gmail.com"], ["user_name", "newmel"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 313ms (ActiveRecord: 2.2ms | Allocations: 3173)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:49:32 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 503)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 2203)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:50:28 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 799)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 3393)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:50:46 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"bjqX774tXVE32ypheDRGwzn2sc6Xh2B46UhC2W4iHG8ogqG+rHj6vDvyjr7Xyez9SlF4XSZtOA/zc6Ls1LrI7Q==", "user"=>{"name"=>"Russio", "email_address"=>"rusioo@gmail.com", "user_name"=>"russio345", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name") VALUES (?, ?, ?)[0m  [["name", "Russio"], ["email_address", "rusioo@gmail.com"], ["user_name", "russio345"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 327ms (ActiveRecord: 4.9ms | Allocations: 2978)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:50:46 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 510)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 2214)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:51:05 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"KzZTiIcyycPIhIKps08XTkqjro65rHJePlueyOSSN0RtjmXZlWduLsStJnYcsr1wOQRnHQhGKikkYH79Xgrjxg==", "user"=>{"name"=>"", "email_address"=>"mzagic@gmail.com", "user_name"=>"mel", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms | Allocations: 1701)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:51:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 504)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 2210)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:52:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 569)
+Completed 200 OK in 60ms (Views: 22.5ms | ActiveRecord: 3.0ms | Allocations: 7229)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:53:50 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"tYdsYj7/0Ex1rkyZrC2uaJKWeKeDZK+ND+gskIR51EHzP1ozLKp3oXmH6EYD0ARW4TGxNDKO9/oV08ylPuEAww==", "user"=>{"name"=>"Bema", "email_address"=>"bema@gmail.com", "user_name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Bema"], ["email_address", "bema@gmail.com"], ["user_name", ""], ["password_digest", "$2a$12$8TNkd4HNImsvuQco3m38su.xiOgG8uUoFFFS5QYY1qqfsEc9FQO9u"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia/index
+Completed 302 Found in 386ms (ActiveRecord: 5.1ms | Allocations: 2598)
+
+
+Started GET "/trivia/index" for ::1 at 2020-04-16 20:53:50 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TriviaController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/trivia_controller.rb:13:in `show'
+Completed 404 Not Found in 14ms (ActiveRecord: 1.0ms | Allocations: 3215)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trivium with 'id'=index):
+  
+app/controllers/trivia_controller.rb:13:in `show'
+Started POST "/users" for ::1 at 2020-04-16 20:54:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"tYdsYj7/0Ex1rkyZrC2uaJKWeKeDZK+ND+gskIR51EHzP1ozLKp3oXmH6EYD0ARW4TGxNDKO9/oV08ylPuEAww==", "user"=>{"name"=>"Bema", "email_address"=>"bema@gmail.com", "user_name"=>"bemaa", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Bema"], ["email_address", "bema@gmail.com"], ["user_name", "bemaa"], ["password_digest", "$2a$12$V8bGdTL1iL93WGrUwBkGeu5l6Amz3xlqGJiBhosxpI8g/hXbm0TCu"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia/index
+Completed 302 Found in 340ms (ActiveRecord: 1.7ms | Allocations: 2375)
+
+
+Started GET "/trivia/index" for ::1 at 2020-04-16 20:54:37 -0500
+Processing by TriviaController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTrivium Load (0.4ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/trivia_controller.rb:13:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1053)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trivium with 'id'=index):
+  
+app/controllers/trivia_controller.rb:13:in `show'
+Started GET "/users/new" for ::1 at 2020-04-16 20:56:08 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 569)
+Completed 200 OK in 34ms (Views: 10.0ms | ActiveRecord: 1.0ms | Allocations: 7131)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:56:26 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"JBSfBwvygkn/Pg+Qjq/6wySGvQXdcIh0Ze+FXHX/e5RirKlWGaclpPMXq08hUlD9VyF0lmya0AN/1GVpz2evFg==", "user"=>{"name"=>"bema", "email_address"=>"bema@gmail.com", "user_name"=>"bema12", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "bema"], ["email_address", "bema@gmail.com"], ["user_name", "bema12"], ["password_digest", "$2a$12$w7GWNQQOFGOBCKMPdIblRefaz9tlQN93YVQv0sAlSBa6fcXhRvqrW"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia/index
+Completed 302 Found in 390ms (ActiveRecord: 2.7ms | Allocations: 2579)
+
+
+Started GET "/trivia/index" for ::1 at 2020-04-16 20:56:27 -0500
+Processing by TriviaController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTrivium Load (0.2ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/trivia_controller.rb:13:in `show'
+Completed 404 Not Found in 11ms (ActiveRecord: 1.0ms | Allocations: 3081)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trivium with 'id'=index):
+  
+app/controllers/trivia_controller.rb:13:in `show'
+Started GET "/games/new" for ::1 at 2020-04-16 20:57:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for GamesController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/new" for ::1 at 2020-04-16 20:58:14 -0500
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for GamesController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/new" for ::1 at 2020-04-16 20:58:18 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for GamesController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/new" for ::1 at 2020-04-16 20:58:21 -0500
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for GamesController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games" for ::1 at 2020-04-16 20:59:13 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for GamesController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.2.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/pick" for ::1 at 2020-04-16 20:59:18 -0500
+Processing by GamesController#pick_game as HTML
+  Rendering games/pick_game.html.erb within layouts/application
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/games/pick_game.html.erb:2
+  Rendered games/pick_game.html.erb within layouts/application (Duration: 17.4ms | Allocations: 2752)
+Completed 200 OK in 38ms (Views: 21.7ms | ActiveRecord: 2.3ms | Allocations: 6822)
+
+
+Started GET "/games/pick/1" for ::1 at 2020-04-16 20:59:20 -0500
+Processing by GamesController#start_game as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrivium Load (0.7ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."trivium_id" = ?[0m  [["trivium_id", 1]]
+  ↳ app/controllers/games_controller.rb:14:in `start_game'
+  Rendering games/start_game.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 6]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 10]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 2]]
+  ↳ app/views/games/start_game.html.erb:7
+  Rendered games/start_game.html.erb within layouts/application (Duration: 41.5ms | Allocations: 16735)
+Completed 200 OK in 128ms (Views: 44.6ms | ActiveRecord: 6.1ms | Allocations: 27215)
+
+
+Started POST "/games/result/1" for ::1 at 2020-04-16 20:59:31 -0500
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"xyxmgrPV2fULLthdI+Iv/t4Muh2x5ujGdxcpQMUSvMIWgex21komyiZ3N6gqwZA6MKukC2cpsfqCwHFyq6Rk+g==", "questions"=>{"7"=>"25", "6"=>"23", "10"=>"38", "4"=>"15", "2"=>"7"}, "commit"=>"Submit Your Answers", "id"=>"1"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `block in create'
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:24:in `block in create'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  ↳ app/controllers/games_controller.rb:25:in `block in create'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `block in create'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:24:in `block in create'
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 6]]
+  ↳ app/controllers/games_controller.rb:25:in `block in create'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `block in create'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:24:in `block in create'
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 10]]
+  ↳ app/controllers/games_controller.rb:25:in `block in create'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `block in create'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:24:in `block in create'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  ↳ app/controllers/games_controller.rb:25:in `block in create'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:23:in `block in create'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:24:in `block in create'
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 2]]
+  ↳ app/controllers/games_controller.rb:25:in `block in create'
+Redirected to http://localhost:3000/games/pick/1
+Completed 302 Found in 43ms (ActiveRecord: 4.8ms | Allocations: 8979)
+
+
+Started GET "/games/pick/1" for ::1 at 2020-04-16 20:59:31 -0500
+Processing by GamesController#start_game as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrivium Load (0.5ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:13:in `start_game'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."trivium_id" = ?[0m  [["trivium_id", 1]]
+  ↳ app/controllers/games_controller.rb:14:in `start_game'
+  Rendering games/start_game.html.erb within layouts/application
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 8]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 2]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 1]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 7]]
+  ↳ app/views/games/start_game.html.erb:7
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/views/games/start_game.html.erb:7
+  Rendered games/start_game.html.erb within layouts/application (Duration: 32.8ms | Allocations: 12425)
+Completed 200 OK in 52ms (Views: 42.5ms | ActiveRecord: 2.3ms | Allocations: 15391)
+
+
+Started GET "/" for ::1 at 2020-04-16 20:59:46 -0500
+Processing by ApplicationController#homepage as HTML
+  Rendering application/homepage.html.erb within layouts/application
+  Rendered application/homepage.html.erb within layouts/application (Duration: 3.5ms | Allocations: 88)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 2015)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 20:59:48 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 569)
+Completed 200 OK in 41ms (Views: 13.9ms | ActiveRecord: 1.3ms | Allocations: 6778)
+
+
+Started POST "/users" for ::1 at 2020-04-16 20:59:57 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ks28oJd6M1vmUqgFlxqGrZIbKy2quiNGmcIZi6b8QPvUdYrxhS+Utup7DNo45yyT4bzivhtQezGD+fm+HGSUeQ==", "user"=>{"name"=>"Russio", "email_address"=>"mzagic@gmail.com", "user_name"=>"mel", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Russio"], ["email_address", "mzagic@gmail.com"], ["user_name", "mel"], ["password_digest", "$2a$12$xBrmhohvclqccdxew7XNg.8wRZUWQ4B2Il5j/9MihZTtff6KLoxcK"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia/index
+Completed 302 Found in 384ms (ActiveRecord: 2.3ms | Allocations: 2581)
+
+
+Started GET "/trivia/index" for ::1 at 2020-04-16 20:59:58 -0500
+Processing by TriviaController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTrivium Load (0.2ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/trivia_controller.rb:13:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.2ms | Allocations: 1005)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trivium with 'id'=index):
+  
+app/controllers/trivia_controller.rb:13:in `show'
+Started GET "/trivia/index" for ::1 at 2020-04-16 21:01:05 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TriviaController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia" WHERE "trivia"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/trivia_controller.rb:13:in `show'
+Completed 404 Not Found in 20ms (ActiveRecord: 4.3ms | Allocations: 3396)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trivium with 'id'=index):
+  
+app/controllers/trivia_controller.rb:13:in `show'
+Started GET "/users/new" for ::1 at 2020-04-16 21:01:12 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 569)
+Completed 200 OK in 38ms (Views: 14.1ms | ActiveRecord: 2.1ms | Allocations: 6810)
+
+
+Started POST "/users" for ::1 at 2020-04-16 21:01:20 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"m6DyE7Zorx7G7GRTCZ622zDZ38t18muTpgW9l2AUlUbdGMRCpD0I88rFwIymYxzlQ34WWMQYM+S8Pl2i2oxBxA==", "user"=>{"name"=>"Mel", "email_address"=>"rusioo@gmail.com", "user_name"=>"newmel", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", "Mel"], ["email_address", "rusioo@gmail.com"], ["user_name", "newmel"], ["password_digest", "$2a$12$antko/hJSsnsOB8A.Otch.6XB5U8KXzZ6PGp6UUHtRHoR//rVLcte"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 392ms (ActiveRecord: 5.1ms | Allocations: 2577)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 21:01:21 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.3ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2342)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.3ms | Allocations: 4589)
+
+
+Started GET "/users" for ::1 at 2020-04-16 21:01:56 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1214)
+Completed 200 OK in 28ms (Views: 19.6ms | ActiveRecord: 2.8ms | Allocations: 3031)
+
+
+Started POST "/users" for ::1 at 2020-04-16 21:02:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"m6DyE7Zorx7G7GRTCZ622zDZ38t18muTpgW9l2AUlUbdGMRCpD0I88rFwIymYxzlQ34WWMQYM+S8Pl2i2oxBxA==", "user"=>{"name"=>"Mel", "email_address"=>"rusioo@gmail.com", "user_name"=>"newmel", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1449)
+
+
+  
+NoMethodError (undefined method `length' for nil:NilClass):
+  
+app/models/user.rb:32:in `fillpassword'
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/users" for ::1 at 2020-04-16 21:03:03 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"m6DyE7Zorx7G7GRTCZ622zDZ38t18muTpgW9l2AUlUbdGMRCpD0I88rFwIymYxzlQ34WWMQYM+S8Pl2i2oxBxA==", "user"=>{"name"=>"Mel", "email_address"=>"rusioo@gmail.com", "user_name"=>"newmel", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 35ms (ActiveRecord: 1.0ms | Allocations: 6790)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 21:03:04 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 518)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 2384)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 21:03:22 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 503)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 2187)
+
+
+Started POST "/users" for ::1 at 2020-04-16 21:03:52 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"CPrsQWJnperWS68aP3HtqNWEYFvRgxVq0Bds+yuJeCdOQtoQcDICB9piC8WQjEeWpiOpyGBpTR3KLIzOkRGspQ==", "user"=>{"name"=>"", "email_address"=>"Chinagirl@gmail.com", "user_name"=>"Vemahaow", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email_address", "user_name", "password_digest") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["email_address", "Chinagirl@gmail.com"], ["user_name", "Vemahaow"], ["password_digest", "$2a$12$.yZleIyc2fe0Ar263nsNHeGfmnEdqx1whTSQYbdmY3pEG14jkNE5i"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Redirected to http://localhost:3000/trivia
+Completed 302 Found in 356ms (ActiveRecord: 3.0ms | Allocations: 2484)
+
+
+Started GET "/trivia" for ::1 at 2020-04-16 21:03:53 -0500
+Processing by TriviaController#index as HTML
+  Rendering trivia/index.html.erb within layouts/application
+  [1m[36mTrivium Load (0.4ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/trivia/index.html.erb:6
+  Rendered trivia/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2494)
+Completed 200 OK in 25ms (Views: 10.7ms | ActiveRecord: 1.1ms | Allocations: 5998)
+
+
+Started GET "/" for ::1 at 2020-04-16 21:22:04 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#homepage as HTML
+  Rendering application/homepage.html.erb within layouts/application
+  Rendered application/homepage.html.erb within layouts/application (Duration: 54.7ms | Allocations: 552)
+Completed 200 OK in 2166ms (Views: 2133.3ms | ActiveRecord: 0.0ms | Allocations: 93167)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 21:22:38 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 370.1ms | Allocations: 182065)
+Completed 200 OK in 448ms (Views: 414.8ms | ActiveRecord: 2.6ms | Allocations: 193382)
+
+
+Started GET "/users/login" for ::1 at 2020-04-16 21:22:48 -0500
+Processing by UsersController#view_login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1405)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 6590)
+
+
+Started GET "/users/new" for ::1 at 2020-04-16 21:23:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 800)
+Completed 200 OK in 69ms (Views: 61.1ms | ActiveRecord: 0.0ms | Allocations: 6980)
+
+
+Started GET "/users/login" for ::1 at 2020-04-16 21:23:28 -0500
+Processing by UsersController#view_login as HTML
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1383)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 6567)
+
+
+Started GET "/games/pick" for ::1 at 2020-04-16 21:31:36 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GamesController#pick_game as HTML
+  Rendering games/pick_game.html.erb within layouts/application
+  [1m[36mTrivium Load (0.7ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/games/pick_game.html.erb:2
+  Rendered games/pick_game.html.erb within layouts/application (Duration: 54.3ms | Allocations: 2792)
+Completed 200 OK in 133ms (Views: 106.0ms | ActiveRecord: 1.2ms | Allocations: 10707)
+
+
+Started GET "/games/pick" for ::1 at 2020-04-16 21:32:14 -0500
+Processing by GamesController#pick_game as HTML
+  Rendering games/pick_game.html.erb within layouts/application
+  [1m[36mTrivium Load (0.6ms)[0m  [1m[34mSELECT "trivia".* FROM "trivia"[0m
+  ↳ app/views/games/pick_game.html.erb:2
+  Rendered games/pick_game.html.erb within layouts/application (Duration: 67.1ms | Allocations: 705)
+Completed 200 OK in 98ms (Views: 93.1ms | ActiveRecord: 0.6ms | Allocations: 6851)
+
+
+Started GET "/" for ::1 at 2020-04-16 21:32:20 -0500
+Processing by ApplicationController#homepage as HTML
+  Rendering application/homepage.html.erb within layouts/application
+  Rendered application/homepage.html.erb within layouts/application (Duration: 0.4ms | Allocations: 88)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.0ms | Allocations: 5602)
+
+
