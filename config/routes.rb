@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get("/games/pick/:id",{to:'games#start_game'})
   post('/games/result/:id',{to:'games#create'})
   get("/games/questions",{to:'games#questions'})
+  get("/navbar",{to:'games#navbar'})
 
   resources :users
   resources :trivia

@@ -10,7 +10,7 @@ def handle_login
     user = User.find_by({ user_name: params[:user_name]})
     if (user!=nil && user.authenticate(params[:password]))
         session[:user_id] = user.id
-        redirect_to('/trivia')
+        redirect_to('/navbar')
     else
         p "Login Failed"
     end
@@ -26,7 +26,7 @@ end
         
 
         if(@user.valid?)
-            redirect_to("/trivia")
+            redirect_to("/navbar")
         else
             flash[:error_messages] = @user.errors.full_messages
             redirect_to("/users/new")
