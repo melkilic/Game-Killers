@@ -1,9 +1,8 @@
 <h1>Edit trivia:</h1>
-
-<label> Trivia: </label>
 <%=form_with(model:@trivium) do |f|%>
 <label> Title: </label>
 <%=f.text_field :title%>
+<br>
 <label> Content: </label>
 <%=f.text_field :content%>
 <%=f.submit%>

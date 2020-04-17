@@ -3,5 +3,6 @@
 <label>Content:</label>
 <%=@trivium.content%><br>
 
-<a class="button" href="/games/pick">Play trivias</a><br>
-<a class="button" href="/trivia/<%=@trivium.id%>/edit">Edit trivia info</a><br>
+<a class="button" href="/games/pick/<%=@trivium.id%>">Play it?</a><br>
+<a class="button" href="/trivia/<%=@trivium.id%>/edit">Edit trivia info?</a><br>
+<a class="button" href="/questions/new">Add questions</a><br>
