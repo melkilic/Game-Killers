@@ -30,14 +30,16 @@ class GamesController < ApplicationController
         end
 
        
+            
+            redirect_to("/games/result")
+        
+        end
+
+        def result
             flash[:result] = result
-            redirect_to("/games/pick/#{params[:id]}")
-        
+            
         end
 
 
-        def navbar
-        
-        end
 
     end

@@ -1,6 +1,6 @@
+<label>Here are all the trivia</label>
 <ul>
 <%@trivia.each do |t|%>
-<label>Here are all the trivia</label>
 <li><%=link_to(t.title,t)%></li>
 <%end%>
 </ul>
