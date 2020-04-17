@@ -1,13 +1,5 @@
 class QuestionsController < ApplicationController
 
-  def show
-    @question= Question.find(params[:id])
-  end
-
-  def index
-    @questions= Question.all
-  end
-  
   def new
     @trivia = Trivium.all
     @question=Question.new
@@ -19,8 +11,18 @@ class QuestionsController < ApplicationController
     redirect_to new_answer_path
   end
 
+  def show
+    @question= Question.find(params[:id])
+  end
+
+  def index
+    @questions= Question.all
+  end
+  
+
   def edit
     @question=Question.find(params[:id])
+    @trivia=Trivium.all
   end
 
   def update

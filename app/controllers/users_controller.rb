@@ -15,26 +15,33 @@ def handle_login
         p "Login Failed"
     end
 end
-
+    
     def new
+        @error_messages = flash[:error_messages]
         @user=User.new
     end
 
     def create
-        @user=User.new(user_params)
-        @user.save
-        redirect_to('/trivia')
+        @user=User.create(user_params)
+        
+
+        if(@user.valid?)
+            redirect_to("/trivia")
+        else
+            flash[:error_messages] = @user.errors.full_messages
+            redirect_to("/users/new")
+        end
+
     end
 
-   def index
-    @users= User.all
-   end
-
+    def index
+        @users= User.all
+       end
+    
     def show
-        @user= User.find(params[:id])
+         @user= User.find(params[:id])
     end
-    
-    
+
 
     def edit
         @user =User.find(params[:id])

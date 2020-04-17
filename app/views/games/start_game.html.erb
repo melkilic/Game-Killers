@@ -1,0 +1,14 @@
+<%=@trivium.title%>
+<%=@result%>
+<%=form_with(method:"post",url:"/games/result/#{params[:id]}") do |f|%>
+    <%@questions.each do |q|%>
+        <%=q.content%>
+        <br>
+        <%q.answers.each do |a|%>
+            <%=f.radio_button :"questions[#{q.id}]", a.id %>
+            <%=a.content%>
+            <br>
+        <% end %>
+    <% end %>
+    <%=f.submit "Submit Your Answers"%>
+<% end %>

@@ -1,4 +1,7 @@
 <label>Title:</label>
 <%=@trivium.title%><br>
 <label>Content:</label>
-<%=@trivium.content%>
+<%=@trivium.content%><br>
+
+<a class="button" href="/games/pick">Play trivias</a><br>
+<a class="button" href="/trivia/<%=@trivium.id%>/edit">Edit trivia info</a><br>

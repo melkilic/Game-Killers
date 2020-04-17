@@ -1,8 +1,6 @@
 <%=form_for(@question) do |f|%>
 <label>Content:</label>
 <%=f.text_field :content%>
-<label>Image URL:</label>
-<%=f.text_field :image%>
 <label>Add the question to this trivia:</label>
 <%=f.collection_select :trivium_id, @trivia, :id, :title%>
 <%=f.submit%>
