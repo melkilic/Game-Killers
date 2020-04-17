@@ -1,9 +1,23 @@
-
+<html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
 <h3>Title:</h3>
-<%=@trivium.title%><br>
-<label>Content:</label>
-<%=@trivium.content%><br>
+<h4><%=@trivium.title%></h4>
+<h2>Content:</h2>
+<h4><%=@trivium.content%></h4>
 
-<a class="button" href="/games/pick/<%=@trivium.id%>">Play it?</a><br>
-<a class="button" href="/trivia/<%=@trivium.id%>/edit">Edit trivia info?</a><br>
-<a class="button" href="/questions/new">Add questions</a><br>
+<h5><a class="button" href="/games/pick/<%=@trivium.id%>">Play it?</a></h5><br>
+<h5><a class="button" href="/trivia/<%=@trivium.id%>/edit">Edit trivia info?</a></h5><br>
+<h5><a class="button" href="/questions/new">Add questions</a></h5><br>
+
+</body>
+</html>

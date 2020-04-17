@@ -1,4 +1,16 @@
-<h1>Edit question:</h1>
+<html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
+<h2>Edit question:</h2>
 <%=form_for(@question) do |f|%>
 <label>Content:</label>
 <%=f.text_field :content%>
@@ -8,3 +20,5 @@
 <%=f.collection_select :trivium_id, @trivia, :id, :title%>
 <%=f.submit%>
 <%end%>
+</body>
+</html>

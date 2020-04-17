@@ -1,5 +1,19 @@
+<html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
 <h1>Questions </h1>
 <a class="button" href="/questions/new">Add questions</a><br>
 <%@questions.each do |q|%>
 <li><%=link_to(q.content,q)%></li><br>
 <%end%>
+</body>
+</html>

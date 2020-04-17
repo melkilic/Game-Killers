@@ -1,4 +1,16 @@
-<h1>Edit answer:</h1>
+<html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
+<h2>Edit answer:</h2>
 <%=form_for(@answer) do |f|%>
 <label> Content: </label><br>
 <%=f.text_field :content%><br>
@@ -6,3 +18,5 @@
 <%=f.text_area :solution%><br>
 <%=f.submit%><br>
 <%end%>
+</body>
+</html>

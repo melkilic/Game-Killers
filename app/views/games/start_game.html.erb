@@ -11,8 +11,8 @@ body {
 </header>
 <body>
 
-<h2><%=@trivium.title%></h2><br>
-<p>Correct Answers So Far:<%=@result%></p><br>
+<h2><%=@trivium.title%></h2>
+<h4>Each question is 10 points. </h4>
 <%=form_with(method:"post",url:"/games/result") do |f|%>
 <ul>
     <%@questions.each do |q|%>

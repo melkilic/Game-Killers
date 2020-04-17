@@ -12,12 +12,11 @@ body {
 <body>
 <h1>Sign up</h1>
 <%if (@error_messages != nil)%>
-<ul>
 <%@error_messages.each do |e|%>
     <li><%=e%></li>
 <%end%>
-</ul>
 <%end%>
+
 
 <%=form_with(model:@user) do |f|%>
 <ul>

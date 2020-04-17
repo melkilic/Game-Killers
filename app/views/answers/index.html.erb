@@ -1,3 +1,17 @@
+<html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
 <%@answers.each do |c|%>
 <%=link_to(c.content,c)%><br>
 <%end%>
+</body>
+</html>

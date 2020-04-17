@@ -10,7 +10,7 @@ body {
 </style>
 </header>
 <body>
-<h2>Trivia Title: </h2><br>
+<h2>Trivia Title: </h2>
 <%@trivia.each do |t|%>
 <h4><li><%=link_to t.title,"/games/pick/#{t.id}"%></li></h4>
 <%end%>

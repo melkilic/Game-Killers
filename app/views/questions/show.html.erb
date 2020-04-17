@@ -1,3 +1,15 @@
+<html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
 <label>Content:</label>
 <%=@question.content%><br>
 <label>Image:</label>
@@ -14,3 +26,5 @@
 
 
 <a class="button" href="/questions/<%=@question.id%>/edit">Edit question</a><br>
+</body>
+</html>
