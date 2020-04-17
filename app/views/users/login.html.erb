@@ -1,6 +1,19 @@
+ <html>
+ <header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
 <%= form_with({ method: 'POST', url: '/users/login' }) do  | form | %>
     <div>
 
+<ul>
         <label>Username</label>
         <%= form.text_field(:user_name) %>
         <br>
@@ -13,3 +26,6 @@
     </div>
     <%= form.submit('Login') %>
 <% end %>
+</ul>
+</body>
+</html>

@@ -1,6 +1,19 @@
+ <html>
+<header>   
+ <style>
+body {
+    style:"font-family:verdana";
+    color:rgb(60, 93, 93);
+    background-color:rgb(224, 235, 235);
+}
+  
+</style>
+</header>
+<body>
+
 <h2><%=@trivium.title%></h2><br>
 <p>Correct Answers So Far:<%=@result%></p><br>
-<%=form_with(method:"post",url:"/games/result/#{params[:id]}") do |f|%>
+<%=form_with(method:"post",url:"/games/result") do |f|%>
 <ul>
     <%@questions.each do |q|%>
         <%=q.content%><br>
@@ -12,3 +25,5 @@
     <%=f.submit "Submit Your Answers"%>
     </ul>
 <% end %>
+</body>
+</html>

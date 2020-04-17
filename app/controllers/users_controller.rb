@@ -26,7 +26,7 @@ end
         
 
         if(@user.valid?)
-
+           session[:user_id]=@user.id
             redirect_to("/quizzard")
         else
             flash[:error_messages] = @user.errors.full_messages

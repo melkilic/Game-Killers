@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   post('/users/login', { to: 'users#handle_login' })
   get('/users/login', {to: "users#view_login"} )
   # get('/users/new', {to: "application#homepage"} )
+  get("/games",to:"games#index")
   get("/games/new",{to:'games#new'})
   get("/games/pick",{to:'games#pick_game'})
   get("/games/pick/:id",{to:'games#start_game'})
-  post('/games/result/:id',{to:'games#create'})
+  
+  get('/games/result/:id',{to:'games#result'})
+  post('/games/result',{to:'games#correct_answers'})
   get("/games/questions",{to:'games#questions'})
   get("/log_out",{to:"users#log_out"})
 
