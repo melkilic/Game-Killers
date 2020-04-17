@@ -1,7 +1,6 @@
 
-<label> Answer: </label>
 <%=form_with(model:@answer) do |f|%>
-<label> Content: </label>
+<label> Answer: </label>
 <%=f.text_field :content%><br>
 <label>Question </label>
 <%=f.collection_select(:question_id, @questions, :id, :content)%>
@@ -9,5 +8,4 @@
 <%=f.check_box :solution %>
 <%=f.submit%>
 <%end%>
-
 

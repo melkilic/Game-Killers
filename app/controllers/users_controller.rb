@@ -10,7 +10,7 @@ def handle_login
     user = User.find_by({ user_name: params[:user_name]})
     if (user!=nil && user.authenticate(params[:password]))
         session[:user_id] = user.id
-        redirect_to('/navbar')
+        redirect_to('/quizzard')
     else
         p "Login Failed"
     end
@@ -26,7 +26,8 @@ end
         
 
         if(@user.valid?)
-            redirect_to("/navbar")
+
+            redirect_to("/quizzard")
         else
             flash[:error_messages] = @user.errors.full_messages
             redirect_to("/users/new")
@@ -52,7 +53,13 @@ end
         @user.update(user_params)
         redirect_to user_path(@user)
     end
-   
+
+    def log_out
+        session[:user_id]=nil
+        redirect_to('/')
+    end
+
+
     private
     def user_params
         params.require(:user).permit(:name,:email_address,:password,:user_name)

@@ -36,8 +36,5 @@ class GamesController < ApplicationController
         end
 
 
-        def navbar
-        
-        end
 
     end

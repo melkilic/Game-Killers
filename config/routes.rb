@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get('/', {to: 'application#homepage'})
+  get('/quizzard',to:'application#quizzard')
   post('/users/login', { to: 'users#handle_login' })
   get('/users/login', {to: "users#view_login"} )
   # get('/users/new', {to: "application#homepage"} )
@@ -9,7 +10,8 @@ Rails.application.routes.draw do
   get("/games/pick/:id",{to:'games#start_game'})
   post('/games/result/:id',{to:'games#create'})
   get("/games/questions",{to:'games#questions'})
-  get("/navbar",{to:'games#navbar'})
+  get("/log_out",{to:"users#log_out"})
+
 
   resources :users
   resources :trivia
